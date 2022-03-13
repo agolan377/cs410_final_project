@@ -1,6 +1,7 @@
-window.onload = createNavBar();
+window.onload = createNavBarAndFooter();
 
-function createNavBar() {
+function createNavBarAndFooter() {
+  //create nav bar
   let div = document.createElement("div");
   div.setAttribute(
     "class",
@@ -57,4 +58,17 @@ function createNavBar() {
     "navbar navbar-expand-lg navbar-dark bg-dark"
   );
   navContainer.appendChild(div);
+
+  //create footer
+  let footerDiv = document.createElement("div");
+  footerDiv.setAttribute("class", "text-center bg-dark p-2");
+  let footerAnchor = document.createElement("a");
+  footerAnchor.setAttribute("class", "link-light");
+  footerAnchor.setAttribute("href", "#nav");
+  footerDiv.appendChild(footerAnchor);
+  footerText = document.createTextNode("To Top");
+  footerAnchor.appendChild(footerText);
+  let footer = document.getElementById("foot");
+  footer.setAttribute("class", "fixed-bottom");
+  footer.appendChild(footerDiv);
 }
